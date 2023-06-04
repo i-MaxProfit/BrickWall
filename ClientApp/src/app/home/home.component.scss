@@ -1,0 +1,47 @@
+#wall {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+.rows {
+  display: inline-block;
+  align-self: flex-end;
+}
+
+.bricks-row {
+  display: flex;
+}
+
+.settings {
+  min-width: 350px;
+}
+
+.form-control:focus,
+.form-select:focus {
+  box-shadow: 0 0 0 0.05rem rgba(13, 110, 253, 0.65) !important;
+}
+
+.form-label {
+  margin-bottom: 0.3rem;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0071b5;
+}
+
+.header-text {
+  font-weight: 600;
+  color: #d84646;
+}
+
+.param-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0071b5;
+  padding-top: 2px;
+}
+
+.param-value {
+  font-weight: 600;
+}

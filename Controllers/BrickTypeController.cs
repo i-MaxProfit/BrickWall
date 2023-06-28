@@ -10,19 +10,17 @@ namespace BrickWall.Controllers
     public class BrickTypeController : ControllerBase
     {
         private readonly IBrickTypeService _brickTypeService;
-        private readonly IMapper _mapper;
 
-        public BrickTypeController(IBrickTypeService brickTypeService, IMapper mapper)
+        public BrickTypeController(IBrickTypeService brickTypeService)
         {
             _brickTypeService = brickTypeService;
-            _mapper = mapper;
         }
 
         [HttpGet]
         public async Task<IEnumerable<BrickTypeDTO>> Get()
         {
             var brickTypes = await _brickTypeService.GetListAsync(useAsNoTracking: true);
-            return _mapper.Map<IEnumerable<BrickTypeDTO>>(brickTypes);
+            return brickTypes;
         }
     }
 }

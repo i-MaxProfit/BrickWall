@@ -10,12 +10,10 @@ namespace BrickWall.Controllers
     public class BrickOptionController : Controller
     {
         private readonly IBrickOptionService _brickOptionService;
-        private readonly IMapper _mapper;
 
-        public BrickOptionController(IBrickOptionService brickOptionService, IMapper mapper)
+        public BrickOptionController(IBrickOptionService brickOptionService)
         {
             _brickOptionService = brickOptionService;
-            _mapper = mapper;
         }
 
         [HttpGet]
@@ -26,7 +24,7 @@ namespace BrickWall.Controllers
                 include: i => i.Include(ii => ii.BrickType),
                 useAsNoTracking: true);
 
-            return _mapper.Map<BrickOptionDTO>(brickOption);
+            return brickOption;
         }
     }
 }
